@@ -1,16 +1,15 @@
-#Exercise Goal
+#Calculator
 
->Create a calculator that behaves like this calculator:
+>Using Tkinter, I have created a calculator that behaves like this calculator: 
 
 
 [Mac Os Catalina Calculator](https://cdn.osxdaily.com/wp-content/uploads/2015/03/calculator-mac-paper-tape-610x463.jpg) 
 
-##The purpose of this exercise is:
+## Run
+```
+python main.py
+```
 
-*To use and understand the Tkinter, ttk and unittest modules. 
+## Notes
 
-*To understand the potential of classes / objects. 
-
->After creating an Arabic numeral calculator, create the structure of a Roman numeral calculator.
-
-**Under construction**
+*Roman Number Calculator under development*

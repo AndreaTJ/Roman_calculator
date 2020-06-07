@@ -195,10 +195,15 @@ class Controlator(ttk.Frame):
         self.operation = ''
         self.dispValue = '0'
         self.signo_recien_pulsado = False
+        self.pulse_equal = False 
 
 
     def to_float(self, valor):
-        return float(valor.replace(',', '.'))
+        if "," in valor: 
+            return float(valor.replace(',', '.'))
+        else: 
+            return round(float(valor))
+
 
     def to_str(self, valor):
         return str(valor).replace('.', ',')
@@ -217,13 +222,23 @@ class Controlator(ttk.Frame):
 
     def set_operation(self, algo):
         if self.status == "R": 
-            print ("Funcionalidad Romana en desarollo")
-            return 
+            message = "under development"
+            print ("Roman Number Calculator under development")
+            self.dispValue = message
+            
         if algo.isdigit():
-            if self.dispValue == "0" or self.signo_recien_pulsado:
+            if self.dispValue == "0" or self.signo_recien_pulsado:s
                 self.op1 = self.to_float(self.dispValue)
                 self.op2 = None
                 self.dispValue = algo
+                self.signo_recien_pulsado: False
+            elif self.pulse_equal: 
+                self.op1 = self.to_float(self.dispValue)
+                self.op2 = None
+                self.operation = ''
+                self.dispValue = algo
+                self.signo_recien_pulsado = False
+                self.pulse_equal = False        
             else:
                 self.dispValue += str(algo)
         
@@ -261,11 +276,13 @@ class Controlator(ttk.Frame):
                 self.op2 = self.to_float(self.dispValue)
                 res = self.calculate()
                 self.dispValue = self.to_str(res)
+                self.pulse_equal = True 
 
             elif self.op1 and self.op2:
                 self.op1 = self.to_float(self.dispValue)
                 res = self.calculate()
                 self.dispValue = self.to_str(res)
+                self.pulse_equal = True 
 
 
         self.display.paint(self.dispValue)
