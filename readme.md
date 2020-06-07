@@ -12,4 +12,4 @@ python main.py
 
 ## Notes
 
-*Roman Number Calculator under development*
+*(Roman Number Calculator under development)*

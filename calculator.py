@@ -223,7 +223,7 @@ class Controlator(ttk.Frame):
     def set_operation(self, algo):
         if self.status == "R": 
             message = "under development"
-            print ("Roman Number Calculator under development")
+            print ("Roman Number Calculator under development ")
             self.dispValue = message
             
         if algo.isdigit():
