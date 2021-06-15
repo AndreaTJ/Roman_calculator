@@ -227,7 +227,7 @@ class Controlator(ttk.Frame):
             self.dispValue = message
             
         if algo.isdigit():
-            if self.dispValue == "0" or self.signo_recien_pulsado:s
+            if self.dispValue == "0" or self.signo_recien_pulsado:
                 self.op1 = self.to_float(self.dispValue)
                 self.op2 = None
                 self.dispValue = algo
